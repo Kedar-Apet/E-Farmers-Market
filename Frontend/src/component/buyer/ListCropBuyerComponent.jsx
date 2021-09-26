@@ -10,6 +10,7 @@ class ListCropBuyerComponent extends Component {
            buyerId:'', 
            cropId:'', 
             message: null,
+            amountvalid:false
            
         }
         this.checkOut = this.checkOut.bind(this);
@@ -18,6 +19,7 @@ class ListCropBuyerComponent extends Component {
         this.handleIncrement=this.handleIncrement.bind(this);
         this.editUser=this.editUser.bind(this);
         this.deleteUser=this.deleteUser.bind(this);
+        this.logout= this.logout.bind(this);
     }
 
     componentDidMount() {         
@@ -28,9 +30,7 @@ class ListCropBuyerComponent extends Component {
         ApiService.fetchCrops()
             .then((resp) => {
                 this.setState({crops: resp.data})
-               console.log(this.state.crops);
-               
-    
+               console.log(this.state.crops); 
     var newState = [...this.state.crops];
     newState.forEach(function(file) {
       file.qty = 0
@@ -39,9 +39,11 @@ class ListCropBuyerComponent extends Component {
     this.setState({crops: newState}, function() {
       console.log(this.state.crops);
     })
-              //  console.log(sessionStorage.getItem("userId")+" ")
             });
+          
+
     }
+
 
     checkOut = (e) => {
         e.preventDefault();
@@ -61,9 +63,12 @@ data.push({  buyerId:sessionStorage.getItem("userId") ,quantity : crop.qty,cropI
         sessionStorage.setItem("data",JSON.stringify ( data));
         sessionStorage.setItem("amount",amount);
         console.log(data)
-       // let data = { buyerId:sessionStorage.getItem("userId") , quantity:this.state.crops.qty,cropId:this.state.crops.id};
+      
+        // let data = { buyerId:sessionStorage.getItem("userId") , quantity:this.state.crops.qty,cropId:this.state.crops.id};
+       if(amount > 0){
         ApiService.checkOut(data)
             .then(res => {
+                
                 console.log(res.data);
                 this.props.history.push('/checkout');
             }
@@ -73,6 +78,11 @@ data.push({  buyerId:sessionStorage.getItem("userId") ,quantity : crop.qty,cropI
                 alert(err.response.data.message)
                 this.props.history.push('/');}
                 );
+        }
+        else{
+            alert("Add items in the cart")
+            this.props.history.push('/buyer');
+        }
     }
 
 
@@ -80,7 +90,7 @@ data.push({  buyerId:sessionStorage.getItem("userId") ,quantity : crop.qty,cropI
    handleDecrement=(crop_id)=>{
     const newItems = [...this.state.crops]; // clone the array 
    newItems.map(item => {
-    console.log(item)
+ //   console.log(item)
         var price=item.price;
         if(item.id === crop_id && item.qty>0){
         item.qty=item.qty - 1;
@@ -93,7 +103,7 @@ data.push({  buyerId:sessionStorage.getItem("userId") ,quantity : crop.qty,cropI
     const newItems = [...this.state.crops]; // clone the array 
  
     newItems.map(item => {
-       console.log(item.qty)
+   //    console.log(item.qty)
         if(item.id === crop_id && item.qty<item.quantity){
         item.qty=item.qty +1;
         item.total=item.price*item.qty;}
@@ -112,19 +122,26 @@ deleteUser() {
        })
 
 }
+logout = (e) => {
+    e.preventDefault();
+   sessionStorage.clear();
+            this.props.history.push('/');
+       
+}
 
     render() {
         return (
-            <div>
+            <div className="image" style={{height: '800px'}}>
                 <div className="App-header2">
                 <h2 className="text-center">Crop Details</h2>
                 <div style={{display:" inline-block"}} align="center" >
-                    <div style={{float:"left"}}>
+                   
                 <button className="btn btn-danger" style={{width:'100px',margin:'20px'}} onClick={() => this.editUser()} data-inline="true"> Edit user</button>
-                </div>
-                <div style={{float:"right"}}>
+               
                 <button className="btn btn-danger" style={{width:'100px',margin:'20px'}} onClick={() => this.deleteUser()} data-inline="true"> Delete user</button>
-                </div>
+               
+                <button className="btn btn-success" style={{width:'100px',margin:'20px'}}onClick={this.logout}>Logout</button>
+              
 </div>
                 </div>
                 <table className="table">
@@ -154,11 +171,16 @@ deleteUser() {
                                     <td>{crop.total}</td>
              {/* <!--   <td> <Counter count={this.state.quantity} handler={this.handler}/></td>      / */}
                 {/* <td>{this.state.quantity*this.props.price}</td> */}
-                <td style={{textAlign:" center"}}>
-                <div style={{display:" inline -block"}}>
-<button type="button" className="input-group-text" onClick={()=>this.handleDecrement(crop.id)}>-</button>
-<div className="form-control text-center" >{crop.qty}</div>
-<button type="button" className="input-group-text" onClick={()=>this.handleIncrement(crop.id)}>+</button>
+                <td >
+                <div style={{display: "inline-block"}}>
+                 
+<button type="button" className="input-group-text" style={{marginLeft: '8px',marginTop:'20px'}} onClick={()=>this.handleDecrement(crop.id)}>-</button>
+
+{/* <div className="form-control text-center " >{crop.qty}</div> */}
+<input type="text"value= {crop.qty} style={{textAlign:" center",width:"50px"}}/>
+
+<button type="button" className="input-group-text" style={{marginLeft: 'px',marginBottom:'30px'}} onClick={()=>this.handleIncrement(crop.id)}>+</button>
+
 </div>
                 </td>
                                     </tr>
@@ -167,7 +189,7 @@ deleteUser() {
                          
                     </tbody>
                 </table>
-                <button className="btn btn-success" onClick={this.checkOut}>CheckOut</button>
+                <button className="btn btn-success" onClick={this.checkOut} disabled={false}>CheckOut</button>
 </div>
            
         );

@@ -44,7 +44,7 @@ console.log()
     }
     render() {
         return(
-            <div>
+            <div className="image">
                 <h2 className="text-center">Add New Crops</h2>
                 <form className="demoForm">
                 <div className="form-group">

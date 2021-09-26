@@ -87,6 +87,7 @@ window.location.href="/register"
 
   render () {
     return (
+      <div className="image" style={{height: '500px'}}>
       <form className="demoForm">
         <h2>Sign up</h2>
         <div className="panel panel-default" >
@@ -109,6 +110,7 @@ window.location.href="/register"
         <button type="submit" className="btn btn-primary"style={{width:'100px',margin:'20px'}} disabled={!this.state.formValid} onClick={this.loginUser}>Sign up</button>
         <button type="submit" className="btn btn-primary" style={{width:'100px',margin:'20px',textAlign:'center'}} disabled={!this.state}onClick={this.registerUser}>Register User</button>
       </form>
+      </div>
     )
   }
 }

@@ -63,7 +63,7 @@ console.log(JSON.stringify(user))
 
     render() {
         return (
-            <div>
+            <div className="image">
                 <h2 className="text-center">Edit User</h2>
                 <form class='demoForm'>
 

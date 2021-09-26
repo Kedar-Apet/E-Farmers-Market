@@ -37,16 +37,18 @@ logout = (e) => {
 
     render() {
         return(
-            <div className="d-flex justify-content-center">
-                <h2 className="d-flex justify-content-center   text-center" align="center"  >Login</h2>
-                <div className="d-flex justify-content-center alert alert-success text-center" role="alert">
- <p> Order Successfully placed Order Id {sessionStorage.getItem("orderId")} </p>
-   Total Amount to be Paid  {sessionStorage.getItem("amount")}   by {this.state.user.name}
+            <div className="image" style={{height: '800px'}}>
+            <div className="d-flex justify-content-center ">
+                <h2 className="d-flex justify-content-center   text-center" align="center"  >Checkout Page</h2>
+                <div className="alert alert-success text-center" role="alert">
+ <p   style={{fontSize: "20px",fontWeight:"bold" }}> Order Successfully placed Order Id {sessionStorage.getItem("orderId")}  </p>
+ <p style={{fontSize: "20px",fontWeight:"bold" }}>Total Amount to be Paid <u> {sessionStorage.getItem("amount")}  Rs </u>  by <u>{this.state.user.name}</u></p>
 </div>
               
 
                 <button className="btn btn-success" onClick={this.logout}>Logout</button>
            
+    </div>
     </div>
         );
     }

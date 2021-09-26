@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import RegisterUser from "./component/user/RegisterUser";
+import Registration from "./component/user/Registration";
 import LoginUser from "./component/user/Form";
 import Logout from "./component/user/Logout";
 import EditUser from "./component/user/EditUserComponent";
@@ -18,9 +18,10 @@ import CheckOut from "./component/order/CheckOut";
 function App() {
   return (
       <div className="app" >
-      <img className="img-fluid" 
-     src={`${process.env.PUBLIC_URL}/assets/images/vegetables.jpg`} 
-     alt="logo"/>
+          <div className="headerImage">  <img className="img-fluid" 
+     src={`${process.env.PUBLIC_URL}/assets/images/header2.jpg`}  
+     alt="logo"/></div>
+    
           <Router>
 
               <div className="App-header">
@@ -31,7 +32,7 @@ function App() {
                   <Switch>
                   
                       <Route exact path="/" component={LoginUser} />
-                      <Route path="/register" component={RegisterUser} />
+                      <Route path="/register" component={Registration} />
                       <Route path="/logout" component={Logout} />
                       <Route path="/edit-user" component={EditUser} />
                       <Route path="/producer" component={ListCropProducerComponent} />
@@ -46,9 +47,6 @@ function App() {
   );
 }
 
-const style = {
-    color: 'red',
-    margin: '10px'
-}
+
 
 export default App;

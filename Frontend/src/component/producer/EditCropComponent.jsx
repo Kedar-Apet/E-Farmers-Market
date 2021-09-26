@@ -52,7 +52,7 @@ class EditCropComponent extends Component {
 
     render() {
         return (
-            <div>
+            <div className="image">
                 <h2 className="text-center">Edit crop</h2>
                 <form className="demoForm">
 

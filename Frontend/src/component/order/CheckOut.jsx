@@ -11,6 +11,7 @@ class CheckOut extends Component {
         }
         this.reloadCropList = this.reloadCropList.bind(this);
         this.placeOrder=this.placeOrder.bind(this);
+        this.logout=this.logout.bind(this);
     }
 
     componentDidMount() {
@@ -40,12 +41,20 @@ class CheckOut extends Component {
       this.props.history.push("/logout");
     });
    }
-
+   logout = (e) => {
+    e.preventDefault();
+   sessionStorage.clear();
+            this.props.history.push('/');
+       
+}
 
 
     render() {
         return (
-            <div>
+            <div className="image" style={{height: '800px'}}>
+                  <div className="App-header3" height='100px'>
+                <button className="btn btn-success" style={{width:'100px',margin:'20px'}} onClick={this.logout}>Logout</button>
+                    </div>
                 <h2 className="text-center">Order Details</h2>
               
                 <table className="table ">
@@ -74,7 +83,7 @@ class CheckOut extends Component {
                        
                     </tbody>
                 </table>
-                <div style={{textAlign:" center",alignItems:'center'}}>Total Amount {sessionStorage.getItem("amount")} </div>
+                <div style={{textAlign:" center",alignItems:'center',fontSize:20,color:'black',fontWeight:'bold'}}>Total Amount {sessionStorage.getItem("amount")} </div>
                             
                 <button className="btn btn-success" onClick={this.placeOrder} style={{marginTop:'30px'}}>Place Order</button>
             </div>
