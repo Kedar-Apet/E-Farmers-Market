@@ -1,0 +1,13 @@
+package com.app.service;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+import com.app.pojos.ShoppingCart;
+
+@Service
+@Transactional
+public interface IShoppingCartService {
+ShoppingCart addItems(int buyerId,int[] cropId,int[] quantity);
+}

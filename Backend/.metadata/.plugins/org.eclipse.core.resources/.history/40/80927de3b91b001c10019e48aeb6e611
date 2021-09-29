@@ -1,0 +1,25 @@
+package com.app.service;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.app.dao.OrderRepository;
+import com.app.dao.UserRepository;
+import com.app.pojos.Order;
+
+@Service
+@Transactional
+public class OrderServiceImpl implements IOrderService{
+@Autowired
+private OrderRepository orderRepo;
+@Autowired
+private UserRepository userRepo;
+
+@Override
+	public Order getOrderDetails(double orderAmount, int buyerId) {
+		
+		return null;
+	}
+}
