@@ -14,6 +14,7 @@ import EditCropComponent from "./component/producer/EditCropComponent"
 import ListCropBuyerComponent from "./component/buyer/ListCropBuyerComponent";
 import CheckOut from "./component/order/CheckOut";
 
+import ListOrdersComponent from "./component/buyer/ListOrdersComponent"
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
                       <Route path="/register" component={Registration} />
                       <Route path="/logout" component={Logout} />
                       <Route path="/edit-user" component={EditUser} />
+                      <Route path="/orders" component={ListOrdersComponent} />
                       <Route path="/producer" component={ListCropProducerComponent} />
                       <Route path="/buyer" component={ListCropBuyerComponent} />
                       <Route path="/add-crops" component={NewCrop} />        

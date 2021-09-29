@@ -44,7 +44,7 @@ console.log()
     }
     render() {
         return(
-            <div className="image">
+            <div className="image" style={{height: '500px'}}>
                 <h2 className="text-center">Add New Crops</h2>
                 <form className="demoForm">
                 <div className="form-group">
@@ -52,8 +52,8 @@ console.log()
                     <input type="text" placeholder="crop name" name="cropName" className="form-control" value={this.state.cropName} onChange={this.onChange}/>
                 </div>
                 <div className="form-group">
-                    <label>Quantity:</label>
-                    <input type="number" placeholder="0" name="quantity" className="form-control" value={this.state.quantity} onChange={this.onChange}/>
+                    <label>Quantity (Kgs):</label>
+                    <input type="number" placeholder="0 kgs" name="quantity" className="form-control" value={this.state.quantity} onChange={this.onChange}/>
                 </div>
                 <div className="form-group">
                     <label>Price:</label>

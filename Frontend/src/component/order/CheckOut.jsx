@@ -31,7 +31,7 @@ class CheckOut extends Component {
     }
 
    placeOrder(){
-       var data={price:sessionStorage.getItem("amount"),buyerId:sessionStorage.getItem("userId")};
+       var data={total:sessionStorage.getItem("amount"),buyerId:sessionStorage.getItem("userId")};
        var orderId;
        console.log(data)
     ApiService.addOrder(data)
@@ -62,7 +62,7 @@ class CheckOut extends Component {
                         <tr>
                             <th className="hidden">Id</th>
                             <th style={{textAlign:" center"}}>CropName</th>
-                            <th style={{textAlign:" center"}}>Quantity</th>
+                            <th style={{textAlign:" center"}}>Quantity (Kgs)</th>
                             <th style={{textAlign:" center"}}> Price</th>                                                       
                         </tr>
                     </thead>

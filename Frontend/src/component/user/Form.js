@@ -107,7 +107,7 @@ window.location.href="/register"
             value={this.state.password}
             onChange={this.handleUserInput}  />
         </div>
-        <button type="submit" className="btn btn-primary"style={{width:'100px',margin:'20px'}} disabled={!this.state.formValid} onClick={this.loginUser}>Sign up</button>
+        <button type="submit" className="btn btn-primary"style={{width:'100px',margin:'20px'}} disabled={!this.state.formValid} onClick={this.loginUser}>Login</button>
         <button type="submit" className="btn btn-primary" style={{width:'100px',margin:'20px',textAlign:'center'}} disabled={!this.state}onClick={this.registerUser}>Register User</button>
       </form>
       </div>

@@ -86,7 +86,7 @@ class ListCropProducerComponent extends Component {
                         <tr>
                             <th className="hidden" style={{textAlign:" center"}}>Id</th>
                             <th style={{textAlign:" center"}}> CropName</th>
-                            <th style={{textAlign:" center"}}>Quantity</th>
+                            <th style={{textAlign:" center"}}>Quantity (Kgs)</th>
                             <th style={{textAlign:" center"}}>Price</th>
                             <th style={{textAlign:" center"}}>Date Of Upload</th>
                            

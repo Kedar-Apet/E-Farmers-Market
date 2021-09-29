@@ -52,7 +52,7 @@ class EditCropComponent extends Component {
 
     render() {
         return (
-            <div className="image">
+            <div className="image" style={{height: '500px'}}>
                 <h2 className="text-center">Edit crop</h2>
                 <form className="demoForm">
 
@@ -63,7 +63,7 @@ class EditCropComponent extends Component {
 
 
                     <div className="form-group">
-                        <label>Quantity:</label>
+                        <label>Quantity Name (Kgs):</label>
                         <input placeholder="number" name="quantity" className="form-control" value={this.state.quantity} onChange={this.onChange}/>
                     </div>
 

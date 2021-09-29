@@ -20,6 +20,7 @@ class ListCropBuyerComponent extends Component {
         this.editUser=this.editUser.bind(this);
         this.deleteUser=this.deleteUser.bind(this);
         this.logout= this.logout.bind(this);
+        this.listOrder=this.listOrder.bind(this);
     }
 
     componentDidMount() {         
@@ -122,6 +123,10 @@ deleteUser() {
        })
 
 }
+listOrder(){
+  
+        this.props.history.push('/orders')
+}
 logout = (e) => {
     e.preventDefault();
    sessionStorage.clear();
@@ -139,7 +144,7 @@ logout = (e) => {
                 <button className="btn btn-danger" style={{width:'100px',margin:'20px'}} onClick={() => this.editUser()} data-inline="true"> Edit user</button>
                
                 <button className="btn btn-danger" style={{width:'100px',margin:'20px'}} onClick={() => this.deleteUser()} data-inline="true"> Delete user</button>
-               
+                <button className="btn btn-danger" style={{width:'100px',margin:'20px'}} onClick={() => this.listOrder()} data-inline="true"> Order History</button>
                 <button className="btn btn-success" style={{width:'100px',margin:'20px'}}onClick={this.logout}>Logout</button>
               
 </div>
@@ -149,12 +154,12 @@ logout = (e) => {
                         <tr>
                             <th className="hidden" style={{textAlign:" center"}}>Id</th>
                             <th  style={{textAlign:" center"}}>CropName</th>
-                            <th style={{textAlign:" center"}}>Max Quantity</th>
+                            <th style={{textAlign:" center"}}>Max Quantity (Kgs</th>
                             <th style={{textAlign:" center"}}>Unit Price</th>
                             <th style={{textAlign:" center"}}>Date Of Upload</th>
                            
                             <th style={{textAlign:" center"}}>Price</th>
-                            <th style={{textAlign:" center"}}>Quantity</th>
+                            <th style={{textAlign:" center"}}>Quantity (Kgs)</th>
                            
                         </tr>
                     </thead>

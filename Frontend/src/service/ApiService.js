@@ -3,7 +3,7 @@ import axios from 'axios';
 const USER_API_BASE_URL = 'http://localhost:8080/user';
 const PRODUCER_API_BASE_URL = 'http://localhost:8080/producer';
 const BUYER_API_BASE_URL = 'http://localhost:8080/buyer';
-
+const ORDER_API_BASE_URL = 'http://localhost:8080/order';
 class ApiService {
 
   
@@ -62,7 +62,10 @@ class ApiService {
         return axios.post(BUYER_API_BASE_URL+'/order',data)
     }
     
+orderHistory(id){
+    return axios.get(ORDER_API_BASE_URL+'/'+id)
 
+}
   
 }
 
