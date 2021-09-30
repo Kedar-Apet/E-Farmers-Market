@@ -22,6 +22,7 @@ public class User extends BaseEntity {
 @Column(length =45,nullable = false )
 private String name;
 @Column(length =45,nullable = false )
+@Pattern(regexp = "^(.+)@(.+)$")
 private String email;
 @Column(length =45,nullable = false )
 private String city;

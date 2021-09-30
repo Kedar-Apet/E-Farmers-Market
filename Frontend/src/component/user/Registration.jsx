@@ -100,7 +100,7 @@ saveUser = (e) => {
 
   render () {
     return (
-        <div className="image"  >
+        <div className="image"  style={{width:'auto',height:'527px'}}>
       <form className="demoForm">
         <h2>Sign up</h2>
         <div className="panel panel-default" >

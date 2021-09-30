@@ -19,7 +19,7 @@ import ListOrdersComponent from "./component/buyer/ListOrdersComponent"
 function App() {
   return (
       <div className="app" >
-          <div className="headerImage">  <img className="img-fluid" 
+          <div className="headerImage" >  <img  style={{width:'1530px',height:'100px'}}
      src={`${process.env.PUBLIC_URL}/assets/images/header2.jpg`}  
      alt="logo"/></div>
     

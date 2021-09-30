@@ -40,7 +40,7 @@ class ListOrdersComponent extends Component {
     }
     render() {
         return (
-            <div className="image" style={{height: '1000px'}}>
+            <div className="image" style={{width:'auto',height:'100%'}}>
             <div className="App-header2">
                 <h2 className="text-center">Crop Details</h2>
                 <div style={{display:" inline-block"}} align="center" >

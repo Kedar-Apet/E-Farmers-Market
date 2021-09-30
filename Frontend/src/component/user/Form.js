@@ -87,7 +87,7 @@ window.location.href="/register"
 
   render () {
     return (
-      <div className="image" style={{height: '500px'}}>
+      <div className="image" style={{width:'auto',height:'527px'}}>
       <form className="demoForm">
         <h2>Sign up</h2>
         <div className="panel panel-default" >

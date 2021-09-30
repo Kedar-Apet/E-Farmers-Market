@@ -44,7 +44,7 @@ console.log()
     }
     render() {
         return(
-            <div className="image" style={{height: '500px'}}>
+            <div className="image" style={{width:'auto',height:'527px'}} >
                 <h2 className="text-center">Add New Crops</h2>
                 <form className="demoForm">
                 <div className="form-group">

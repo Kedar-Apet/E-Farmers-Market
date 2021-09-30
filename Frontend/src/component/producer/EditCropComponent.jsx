@@ -45,6 +45,7 @@ class EditCropComponent extends Component {
         let crop = {id: this.state.id, cropName: this.state.cropName, quantity: this.state.quantity, price: this.state.price, dateOfUpload: this.state.dateOfUpload};
         ApiService.editCrop(crop)
             .then(res => {
+                console.log(this.state.quantity)
                 this.setState({message : 'crop details updated successfully.'});
                 this.props.history.push('/producer');
             });
@@ -52,7 +53,7 @@ class EditCropComponent extends Component {
 
     render() {
         return (
-            <div className="image" style={{height: '500px'}}>
+            <div className="image" style={{width:'auto',height:'527px'}}>
                 <h2 className="text-center">Edit crop</h2>
                 <form className="demoForm">
 

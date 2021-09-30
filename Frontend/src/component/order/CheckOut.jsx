@@ -51,7 +51,7 @@ class CheckOut extends Component {
 
     render() {
         return (
-            <div className="image" style={{height: '800px'}}>
+            <div className="image" style={{width:'auto',height:'527px'}}>
                   <div className="App-header3" height='100px'>
                 <button className="btn btn-success" style={{width:'100px',margin:'20px'}} onClick={this.logout}>Logout</button>
                     </div>

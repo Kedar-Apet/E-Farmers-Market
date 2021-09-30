@@ -37,7 +37,7 @@ logout = (e) => {
 
     render() {
         return(
-            <div className="image" style={{height: '800px'}}>
+            <div className="image" style={{width:'auto',height:'527px'}} >
             <div className="d-flex justify-content-center ">
                 <h2 className="d-flex justify-content-center   text-center" align="center"  >Checkout Page</h2>
                 <div className="alert alert-success text-center" role="alert">

@@ -66,8 +66,8 @@ font-weight: bold;
   line-height: 40px; /* Same as height  */
 }
 .headerImage{
-  width:1920px;
+  width:'1000px';
     height:100px;  
-    overflow:hidden;
+   
 }
 

@@ -136,7 +136,7 @@ logout = (e) => {
 
     render() {
         return (
-            <div className="image" style={{height: '800px'}}>
+            <div className="image" style={{width:'auto',height:'600px'}} >
                 <div className="App-header2">
                 <h2 className="text-center">Crop Details</h2>
                 <div style={{display:" inline-block"}} align="center" >
